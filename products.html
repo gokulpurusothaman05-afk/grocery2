@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Shop fresh organic vegetables, healthy fruits, nutritious nuts, and bakery items. Filter by budget, categories, and USDA organic stamps.">
+  
+  <!-- CSS Library CDNs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Loading Page / Preloader (Section 1) -->
+  <div id="preloader">
+    <div class="preloader-logo">
+      <img src="assets/images/logo.webp" alt="Stackly logo">
+    </div>
+    <div class="spinner"></div>
+    <div class="preloader-text">Loading fresh organic goods...</div>
+  </div>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Section 2: Shop Parallax Header (Jarallax parallax background) -->
+    <section class="jarallax-banner-sec jarallax">
+      <img src="assets/images/about_grocery_store.png" alt="Shop Banner" class="jarallax-img">
+      <div class="banner-content" data-aos="fade-down">
+        <h2>Fresh Organic Aisles</h2>
+        <p style="font-weight: 500; letter-spacing: 1px;"><a href="index.html">Home</a> &nbsp;/&nbsp; Shop Products</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Shop Settings Panel -->
+    <section class="settings-sec" style="padding-bottom: 2rem; background-color: var(--color-bg-white); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h3 style="font-family: var(--font-sans); font-size: 1.1rem; color: var(--color-text-muted);">Showing 1 - 8 of 8 Organic results</h3>
+        </div>
+        <div style="display: flex; gap: 1rem; align-items: center;">
+          <button class="filter-btn active" style="padding: 0.4rem 1rem;"><i class="fa-solid fa-table-cells"></i> Grid</button>
+          <a href="404.html" class="filter-btn" style="padding: 0.4rem 1rem; color: var(--color-text-muted);"><i class="fa-solid fa-list"></i> List</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Hot Promotions Slider (Slick Carousel) -->
+    <section class="promo-slider-sec" style="background-color: var(--color-bg);">
+      <div class="slick-testimonial-slider" style="max-width: 1100px; margin: 0 auto;">
+        <div class="deal-sec" style="margin: 0; background-color: var(--color-primary-light); box-shadow: none;">
+          <div class="deal-grid" style="grid-template-columns: 1.2fr 0.8fr;">
+            <div class="deal-content">
+              <span class="badge-custom">Slick Deal</span>
+              <h2 style="font-size: 2.2rem;">Cold Pressed Juices Combo</h2>
+              <p>Get three bottles of nutritional raw juice (Orange, Celery-Green, and Lemonade) for only ₹12.99. Freshly squeezed, zero additives.</p>
+              <a href="#products-showcase-section" class="btn-custom">Browse Juice Items</a>
+            </div>
+            <div>
+              <img src="assets/images/juice_bottles.png" alt="Juice Combo" style="max-width: 80%; border-radius: var(--radius-md);">
+            </div>
+          </div>
+        </div>
+        <div class="deal-sec" style="margin: 0; background-color: var(--color-accent-light); box-shadow: none;">
+          <div class="deal-grid" style="grid-template-columns: 1.2fr 0.8fr;">
+            <div class="deal-content">
+              <span class="badge-custom">Premium Sourdough</span>
+              <h2 style="font-size: 2.2rem; color: var(--color-primary-dark);">Stone-Baked Crusts</h2>
+              <p>Fresh whole wheat sourdough baked daily by master bakers. Crusty exterior with an incredibly soft organic interior.</p>
+              <a href="#products-showcase-section" class="btn-custom btn-primary-custom">Browse Bakery Items</a>
+            </div>
+            <div>
+              <img src="assets/images/bakery_bread.png" alt="Sourdough Loaves" style="max-width: 80%; border-radius: var(--radius-md);">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Filter Controls Sidebar (noUiSlider) & Products Grid (Isotope layout) -->
+    <section class="shop-grid-sec" id="products-showcase-section" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr;" id="shop-main-layout">
+        
+        <!-- Filter Controls Widget -->
+        <div style="background-color: var(--color-bg); padding: 2rem; border-radius: var(--radius-md); border: 1px solid var(--color-border); margin-bottom: 3rem;" data-aos="fade-right">
+          <h3 style="color: var(--color-primary); font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--color-border);">Filter Options</h3>
+          
+          <!-- Category Filtering (Isotope Hook) -->
+          <div style="margin-bottom: 2rem;">
+            <h4 style="font-family: var(--font-sans); font-weight: 600; margin-bottom: 1rem;">Product Category</h4>
+            <div class="product-filter-nav" style="justify-content: flex-start; margin-bottom: 0;">
+              <button class="filter-btn active" data-filter="*">All</button>
+              <button class="filter-btn" data-filter=".cat-fruit">Fruits</button>
+              <button class="filter-btn" data-filter=".cat-veg">Vegetables</button>
+              <button class="filter-btn" data-filter=".cat-nuts">Organic Nuts</button>
+              <button class="filter-btn" data-filter=".cat-bakery">Bakery</button>
+            </div>
+          </div>
+
+          <!-- Price Filter (noUiSlider) -->
+          <div>
+            <h4 style="font-family: var(--font-sans); font-weight: 600; margin-bottom: 1rem;">Filter by Budget</h4>
+            <div id="price-slider-widget" style="margin-bottom: 1.5rem;"></div>
+            <p style="font-weight: 500; font-size: 0.95rem; color: var(--color-primary);">
+              Range: <span id="price-range-val" style="color: var(--color-accent); font-weight: bold;">₹5.00 - ₹45.00</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Section 6: Products Grid (Isotope Filtered Grid) -->
+        <div>
+          <div class="row product-grid">
+            <!-- Card 1: Fruit -->
+            <div class="col-md-4 col-sm-6 cat-fruit" style="padding: 10px; width: 100%; max-width: 280px; display: inline-block;">
+              <div class="prod-card" data-aos="fade-up">
+                <span class="prod-badge">Hot Deal</span>
+                <div class="prod-img-wrap">
+                  <img src="assets/images/hero_berry_bowl.png" alt="Berries">
+                </div>
+                <h3 class="prod-title">Mixed Berry Basket</h3>
+                <div class="prod-rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="prod-price-cart">
+                  <span class="prod-price"><del>₹19.99</del>₹9.99</span>
+                  <button class="add-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Nuts -->
+            <div class="col-md-4 col-sm-6 cat-nuts" style="padding: 10px; width: 100%; max-width: 280px; display: inline-block;">
+              <div class="prod-card" data-aos="fade-up" data-delay="100">
+                <div class="prod-img-wrap">
+                  <img src="assets/images/nuts_assorted.png" alt="Walnuts">
+                </div>
+                <h3 class="prod-title">Assorted Walnuts</h3>
+                <div class="prod-rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <div class="prod-price-cart">
+                  <span class="prod-price">₹14.50</span>
+                  <button class="add-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Juices -->
+            <div class="col-md-4 col-sm-6 cat-fruit" style="padding: 10px; width: 100%; max-width: 280px; display: inline-block;">
+              <div class="prod-card" data-aos="fade-up" data-delay="200">
+                <div class="prod-img-wrap">
+                  <img src="assets/images/juice_bottles.png" alt="Juice">
+                </div>
+                <h3 class="prod-title">Cold Juice Combo</h3>
+                <div class="prod-rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                </div>
+                <div class="prod-price-cart">
+                  <span class="prod-price">₹12.99</span>
+                  <button class="add-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Bakery -->
+            <div class="col-md-4 col-sm-6 cat-bakery" style="padding: 10px; width: 100%; max-width: 280px; display: inline-block;">
+              <div class="prod-card" data-aos="fade-up">
+                <span class="prod-badge">Fresh</span>
+                <div class="prod-img-wrap">
+                  <img src="assets/images/bakery_bread.png" alt="Bread">
+                </div>
+                <h3 class="prod-title">Sourdough Loaf</h3>
+                <div class="prod-rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="prod-price-cart">
+                  <span class="prod-price">₹5.25</span>
+                  <button class="add-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 5: Vegetables (Mock icon/styles) -->
+            <div class="col-md-4 col-sm-6 cat-veg" style="padding: 10px; width: 100%; max-width: 280px; display: inline-block;">
+              <div class="prod-card" data-aos="fade-up">
+                <div class="prod-img-wrap">
+                  <i class="fa-solid fa-carrot" style="font-size: 5rem; color: var(--color-accent);"></i>
+                </div>
+                <h3 class="prod-title">Baby Carrots Bundle</h3>
+                <div class="prod-rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                </div>
+                <div class="prod-price-cart">
+                  <span class="prod-price">₹2.49</span>
+                  <button class="add-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: Fruits (Lemon Mock) -->
+            <div class="col-md-4 col-sm-6 cat-fruit" style="padding: 10px; width: 100%; max-width: 280px; display: inline-block;">
+              <div class="prod-card" data-aos="fade-up">
+                <div class="prod-img-wrap">
+                  <i class="fa-solid fa-lemon" style="font-size: 5rem; color: #ffc107;"></i>
+                </div>
+                <h3 class="prod-title">Organic Lemon Pack</h3>
+                <div class="prod-rating">
+                  <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+                </div>
+                <div class="prod-price-cart">
+                  <span class="prod-price">₹3.90</span>
+                  <button class="add-cart-btn"><i class="fa-solid fa-plus"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Section 7: Product Quickview Modal (Magnific Popup trigger) -->
+    <section class="quickview-sec" style="background-color: var(--color-bg);">
+      <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title">Visual Product Inspections</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Click on our farm images below to open details and gallery popups in full resolution.</p>
+        <div class="gallery-popup-grid" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="assets/images/hero_berry_bowl.png" class="btn-custom" title="Fresh Mixed Berries Crop Detail">Inspect Berries</a>
+          <a href="assets/images/juice_bottles.png" class="btn-custom btn-primary-custom" title="Fresh Cold Pressed Juice Squeeze">Inspect Juices</a>
+          <a href="assets/images/nuts_assorted.png" class="btn-custom" title="Premium Roasted Organic Walnuts">Inspect Nuts</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Interactive Recipe Guides (Click ingredients to add to cart) -->
+    <section class="recipes-sec" style="background-color: var(--color-bg-white);">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Cooking Guide</span>
+        <h2 class="section-title">Fresh Ingredient Recipe Guides</h2>
+      </div>
+      <div class="footer-container" style="max-width: 1000px; margin: 0 auto;">
+        <div class="timeline-box" data-aos="fade-right">
+          <span style="font-weight: bold; color: var(--color-accent);">Recipe 1</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary); margin: 0.5rem 0;">Berry Morning Parfait</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Combine organic mixed berries with greek yogurt, adding toasted walnuts and raw organic honey.</p>
+          <button class="btn-custom" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;" onclick="alert('Success! Parfait ingredients added to cart: Mixed Berries, Assorted Walnuts.')">Add Ingredients</button>
+        </div>
+        <div class="timeline-box" data-aos="fade-left">
+          <span style="font-weight: bold; color: var(--color-accent);">Recipe 2</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary); margin: 0.5rem 0;">Artisan Sourdough Toast</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1.5rem;">Toasted sourdough bread loaves topped with organic baby carrots mash, olive oil, and almonds.</p>
+          <button class="btn-custom btn-primary-custom" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;" onclick="alert('Success! Toast ingredients added to cart: Sourdough Bread, Carrots Bundle.')">Add Ingredients</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Food Nutritional Accordion (jQuery UI Accordion) -->
+    <section class="nutri-accordion-sec">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Health Value</span>
+        <h2 class="section-title">Nutritional Facts Breakdown</h2>
+      </div>
+      <div class="faq-accordion" style="max-width: 700px; margin: 0 auto;">
+        <h3>Mixed Berry Nutritional Content</h3>
+        <div>
+          <p>Strawberries and blueberries are extremely rich in antioxidants like anthocyanins. One cup delivers 85 calories, 4 grams of dietary fiber, and 150% of the recommended daily intake of Vitamin C.</p>
+        </div>
+        <h3>Artisan Sourdough Whole-Wheat bread</h3>
+        <div>
+          <p>Sourdough fermentation breaks down phytates, enhancing digestability and mineral absorption. Contains high amounts of B-complex vitamins, iron, and slow-release carbohydrates.</p>
+        </div>
+        <h3>Cold Pressed Vegetable Juices</h3>
+        <div>
+          <p>High levels of chlorophyll and potassium help cleanse the digestive tract and regulate blood pressure. Zero added corn sugar ensures stable glucose levels.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Sticky Basket Preview Panel -->
+    <section class="basket-preview-sec" id="cart-section" style="background-color: var(--color-primary-light);">
+      <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title" style="font-size: 2.2rem; color: var(--color-primary-dark);"><i class="fa-solid fa-cart-shopping"></i> Your Selected Basket</h2>
+        <div class="timeline-box" style="background-color: var(--color-bg-white); padding: 1.5rem; text-align: left; margin: 1.5rem auto 2.5rem; max-width: 550px;">
+          <ul style="list-style: none;">
+            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding: 0.8rem 0;">
+              <span><strong>Mixed Berry Basket</strong> (Qty: 1)</span>
+              <span>₹9.99</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding: 0.8rem 0;">
+              <span><strong>Cold Juice Combo</strong> (Qty: 1)</span>
+              <span>₹12.99</span>
+            </li>
+            <li style="display: flex; justify-content: space-between; border-bottom: 1px solid var(--color-border); padding: 0.8rem 0;">
+              <span><strong>Sourdough Loaf</strong> (Qty: 1)</span>
+              <span>₹5.25</span>
+            </li>
+          </ul>
+          <div style="display: flex; justify-content: space-between; font-weight: bold; font-size: 1.2rem; margin-top: 1rem; color: var(--color-primary);">
+            <span>Subtotal:</span>
+            <span>₹28.23</span>
+          </div>
+        </div>
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <a href="login.html" class="btn-custom">Login to Checkout</a>
+          <a href="404.html" class="btn-custom btn-primary-custom">Express Checkout</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript Library CDNs -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/2.0.4/jarallax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1.1/jquery.appear.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

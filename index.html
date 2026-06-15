@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Welcome to Stackly. We offer fresh organic fruits, vegetables, nuts, and juices delivered to your doorstep. Explore our daily flash deals.">
+  
+  <!-- CSS Library CDNs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Loading Page / Preloader (Section 1) -->
+  <div id="preloader">
+    <div class="preloader-logo">
+      <img src="assets/images/logo.webp" alt="Stackly logo">
+    </div>
+    <div class="spinner"></div>
+    <div class="preloader-text">Loading fresh organic goods...</div>
+  </div>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Section 2: Hero Section (Vivid colors, organic shape, berry bowl, curved text badge) -->
+    <section class="hero-sec">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-subtitle">Organic Food & Diet</div>
+          <h1 class="hero-title lettering-title">Cayerce <br>Apfour <span>Cour.</span></h1>
+          <p class="hero-text">Fresh from family farms directly to your table. Experience organic vegetables, fresh berries, and raw juices curated for standard nutritional diets.</p>
+          <div class="hero-actions">
+            <a href="products.html" class="btn-custom"><i class="fa-solid fa-cart-flatbed-suitcase"></i> Shop Now</a>
+            <a href="about.html" class="btn-custom btn-primary-custom" style="margin-left: 10px;"><i class="fa-solid fa-circle-play"></i> Our Story</a>
+          </div>
+        </div>
+        <div class="hero-image-wrap">
+          <img src="assets/images/hero_berry_bowl.png" alt="Fresh Organic Berry Bowl" class="hero-image">
+          <div class="hero-badge-circletype" id="curved-badge-wrap">
+            <div id="curved-text-badge" class="curved-txt">STACKLY ORGANIC CERTIFIED • 100% FRESH •</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: City Harvest Categories Slider (Owl Carousel) -->
+    <section class="cat-slider-sec">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">City Harvest</span>
+        <h2 class="section-title">Explore Categories</h2>
+      </div>
+      <div class="owl-carousel owl-theme" style="max-width: 1200px; margin: 0 auto;">
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-apple-whole"></i></div>
+          <h3 class="cat-title">Fresh Fruits</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Citrus, apples & berries</p>
+        </div>
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-carrot"></i></div>
+          <h3 class="cat-title">Vegetables</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Root items & leafy greens</p>
+        </div>
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-seedling"></i></div>
+          <h3 class="cat-title">Organic Nuts</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Walnuts & raw almonds</p>
+        </div>
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+          <h3 class="cat-title">Bakery Bread</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Artisan sourdough loaves</p>
+        </div>
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-whiskey-glass"></i></div>
+          <h3 class="cat-title">Raw Juices</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Cold pressed juices</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Daily Deal Countdown (Animated countdown clock) -->
+    <section class="deal-sec" data-aos="fade-up">
+      <div class="deal-grid">
+        <div class="deal-content">
+          <span class="badge-custom">Deal of the Week</span>
+          <h2>50% Off Organic Berry Basket</h2>
+          <p>Grab our family-sized organic mixed berries basket containing delicious strawberries, fresh blueberries, and raspberries. Sourced directly from local Jersey farms.</p>
+          <div class="countdown-wrap" id="deal-countdown">
+            <div class="countdown-item">
+              <span class="countdown-num" id="days-val">00</span>
+              <span class="countdown-label">Days</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="hours-val">00</span>
+              <span class="countdown-label">Hours</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="mins-val">00</span>
+              <span class="countdown-label">Mins</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-num" id="secs-val">00</span>
+              <span class="countdown-label">Secs</span>
+            </div>
+          </div>
+          <a href="products.html" class="btn-custom">Secure This Offer</a>
+        </div>
+        <div style="display: flex; justify-content: center;">
+          <img src="assets/images/juice_bottles.png" alt="Juice Bottle Combo Deal" style="border-radius: var(--radius-md); box-shadow: var(--shadow-md); max-width: 90%;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Brand Story Video Section (Magnific Popup Lightbox) -->
+    <section class="video-promo-sec jarallax" style="min-height: 400px; display: flex; align-items: center; justify-content: center;">
+      <img src="assets/images/about_grocery_store.png" alt="Parallax Background Farm" class="jarallax-img">
+      <div style="z-index: 2; text-align: center; color: white;" data-aos="zoom-in">
+        <h2 style="font-family: var(--font-serif); font-size: 3rem; margin-bottom: 1rem;">Cultivating Healthy Habits</h2>
+        <p style="margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">Watch a brief 3-minute video showing our organic sourcing methods and farmer networks.</p>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="video-popup-link" style="display: inline-flex; width: 80px; height: 80px; background-color: var(--color-accent); border-radius: 50%; align-items: center; justify-content: center; font-size: 2rem; color: white; box-shadow: 0 0 20px rgba(255,159,28,0.5);">
+          <i class="fa-solid fa-play"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Section 6: Trust Certifications Badges (Hover lettering animations) -->
+    <section class="trust-sec" style="background-color: var(--color-bg-white);">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Safety first</span>
+        <h2 class="section-title">Verified Organic Certifications</h2>
+      </div>
+      <div class="footer-container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <div class="timeline-box" data-aos="fade-right">
+          <i class="fa-solid fa-shield-halved" style="font-size: 3rem; color: var(--color-primary); margin-bottom: 1rem;"></i>
+          <h3 class="cat-title">USDA Organic</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">100% pesticide and synthetic fertilizer free certification.</p>
+        </div>
+        <div class="timeline-box" data-aos="fade-up">
+          <i class="fa-solid fa-certificate" style="font-size: 3rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+          <h3 class="cat-title">Non-GMO Verified</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Assurance that all seeds are naturally bred and sourced.</p>
+        </div>
+        <div class="timeline-box" data-aos="fade-left">
+          <i class="fa-solid fa-truck-fast" style="font-size: 3rem; color: var(--color-primary); margin-bottom: 1rem;"></i>
+          <h3 class="cat-title">Cold-Chain logistics</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted);">Refrigerated delivery keeping nutrients locked until unpackaged.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Nutritional Diet Planner (Custom select simulator) -->
+    <section class="planner-sec">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Smart Choice</span>
+        <h2 class="section-title">Personalized Grocery Planner</h2>
+      </div>
+      <div style="max-width: 800px; margin: 0 auto; display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center;">
+        <div>
+          <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">Select your primary health or diet goal below. Our custom algorithm will instantly recommend a certified basket selection matching your nutritional target.</p>
+          
+          <div class="form-group">
+            <label>What is your current fitness goal?</label>
+            <div class="custom-select-wrap">
+              <div class="custom-select-trigger">
+                <span>-- Select Fitness Goal --</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </div>
+              <input type="hidden" id="selected-planner-goal" name="goal">
+              <div class="custom-options">
+                <div class="custom-option" data-value="weight-loss">Weight Loss & Lean Muscle</div>
+                <div class="custom-option" data-value="immune-boost">Immune System Shield (High Vitamin C)</div>
+                <div class="custom-option" data-value="fiber-rich">Digestive Health & Fiber Intake</div>
+                <div class="custom-option" data-value="protein-pack">High-Protein Organic Nutrition</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="planner-result-card timeline-box" style="background-color: var(--color-bg-white); border-color: var(--color-accent); padding: 2rem;">
+          <h3 style="color: var(--color-primary); font-family: var(--font-serif); font-size: 1.5rem; margin-bottom: 1rem;">Your Curated Basket Recommendation</h3>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">Select a goal on the left to activate our recommendation engine and review contents.</p>
+          <a href="products.html" id="purchase-curated" class="btn-custom btn-primary-custom validate-before-redirect" data-required-selector="#selected-planner-goal" style="font-size: 0.9rem; padding: 0.6rem 1.5rem;">Purchase Curated Basket</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Customer Testimonials (Slick Carousel Slider) -->
+    <section class="testimonials-sec" style="background-color: var(--color-bg-white);">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Reviews</span>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+      <div class="slick-testimonial-slider" style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <div class="timeline-box" style="box-shadow: none; border: none; background: none;">
+          <p style="font-style: italic; font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1.5rem;">"Stackly's organic berries are exceptionally sweet and fresh. I scheduled a subscription delivery for my family, and they arrive every Saturday morning without fail."</p>
+          <div class="prod-rating" style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <h4 style="font-family: var(--font-sans); font-weight: bold; font-size: 1rem; color: var(--color-text);">Sarah Henderson</h4>
+          <span style="font-size: 0.8rem; color: var(--color-text-muted);">Verified Buyer • NY</span>
+        </div>
+        <div class="timeline-box" style="box-shadow: none; border: none; background: none;">
+          <p style="font-style: italic; font-size: 1.25rem; color: var(--color-primary); margin-bottom: 1.5rem;">"We love their bakery breads and cold pressed juices. Form validation on the checkout was seamless and the customer portal spending charts are very convenient to monitor expenses."</p>
+          <div class="prod-rating" style="font-size: 1.1rem; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <h4 style="font-family: var(--font-sans); font-weight: bold; font-size: 1rem; color: var(--color-text);">Michael Chang</h4>
+          <span style="font-size: 0.8rem; color: var(--color-text-muted);">Health Coach • Brooklyn</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Smart Budget Basket Slider (noUiSlider widget integration) -->
+    <section class="budget-slider-sec">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Flexibility</span>
+        <h2 class="section-title">Configure Basket Budget</h2>
+      </div>
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+        <p style="color: var(--color-text-muted); margin-bottom: 3rem;">Drag the range handles to define your target spending budget. Our system will dynamically balance your grocery selection within this budget limit.</p>
+        <div id="price-slider-widget" style="margin: 0 auto 2.5rem; max-width: 500px;"></div>
+        <h3 style="font-family: var(--font-sans); font-weight: 600; color: var(--color-primary); margin-bottom: 2rem;">
+          Target Spending Limit: <span id="price-range-val" style="color: var(--color-accent); font-weight: bold;">₹5.00 - ₹45.00</span>
+        </h3>
+        <a href="products.html" class="btn-custom"><i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Generate Grocery Basket</a>
+      </div>
+    </section>
+
+    <!-- Section 10: Weekly Newsletter Subscription (Validation) -->
+    <section class="newsletter-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+        <h2 class="section-title">Subscribe to Stackly Deals</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Get instant email discounts on fresh fruits, nuts, and organic baked breads.</p>
+        <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <div class="form-group" style="margin: 0;">
+            <input type="email" name="email" placeholder="Your Email Address" class="form-control" required style="border-radius: var(--radius-lg);">
+          </div>
+          <button type="submit" class="btn-custom" style="align-self: center; margin-top: 1rem;">Join VIP Club</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript Library CDNs -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/2.0.4/jarallax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1.1/jquery.appear.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

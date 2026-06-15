@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Oops! The page you are looking for does not exist. Explore Stackly organic grocery deals instead.">
+  
+  <!-- CSS Library CDNs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Loading Page / Preloader (Section 1) -->
+  <div id="preloader">
+    <div class="preloader-logo">
+      <img src="assets/images/logo.webp" alt="Stackly logo">
+    </div>
+    <div class="spinner"></div>
+    <div class="preloader-text">Loading fresh organic goods...</div>
+  </div>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Section 2: 404 Main Error Hero Banner -->
+    <section class="error-sec" data-aos="fade-up">
+      <div class="error-wrap">
+        <h1 class="animate__animated animate__bounce">404</h1>
+        <h2>Lost in the Organic Garden?</h2>
+        <p>The page you're searching for seems to have withered away. Let's guide you back to our fresh aisles.</p>
+        <div class="error-actions">
+          <a href="index.html" class="btn-custom"><i class="fa-solid fa-house"></i> Return to Home</a>
+          <a href="products.html" class="btn-custom btn-primary-custom"><i class="fa-solid fa-basket-shopping"></i> Go to Shop</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Smart Search Bar Section -->
+    <section class="search-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+        <h3 class="section-title" style="font-size: 2rem;">Search Our Store</h3>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Didn't find what you needed? Type below to explore Stackly.</p>
+        <form action="products.html" method="GET" style="display: flex; gap: 0.5rem; justify-content: center;">
+          <input type="text" placeholder="Search fresh berries, oranges, flour..." class="form-control" name="query" required style="border-radius: var(--radius-lg);">
+          <button type="submit" class="btn-custom" style="padding: 0.8rem 1.5rem;"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section 4: Quick Help Navigation Cards -->
+    <section class="help-links-sec">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Need Help?</span>
+        <h2 class="section-title lettering-title">Where to Go Next</h2>
+      </div>
+      <div class="footer-container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <div class="cat-item" data-aos="fade-right">
+          <div class="cat-icon"><i class="fa-solid fa-file-invoice-dollar"></i></div>
+          <h3 class="cat-title">Billing & Orders</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1rem;">View invoices or track ongoing vegetable cart orders.</p>
+          <a href="login.html" class="btn-custom" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;">Access Dashboard</a>
+        </div>
+        <div class="cat-item" data-aos="fade-up">
+          <div class="cat-icon"><i class="fa-solid fa-address-book"></i></div>
+          <h3 class="cat-title">Customer Support</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1rem;">Contact our 24/7 client relations for missing baskets.</p>
+          <a href="contact.html" class="btn-custom" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;">Contact Support</a>
+        </div>
+        <div class="cat-item" data-aos="fade-left">
+          <div class="cat-icon"><i class="fa-solid fa-seedling"></i></div>
+          <h3 class="cat-title">Our Farmers</h3>
+          <p style="font-size: 0.9rem; color: var(--color-text-muted); margin-bottom: 1rem;">Meet the soil innovators supplying our healthy fruits.</p>
+          <a href="about.html" class="btn-custom" style="padding: 0.4rem 1.2rem; font-size: 0.85rem;">About Team</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Featured Fresh Deals (Carousel Slider) -->
+    <section class="carousel-products-sec" style="background-color: var(--color-bg-white);">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Recommended Items</span>
+        <h2 class="section-title">Fresh Arrivals Slider</h2>
+      </div>
+      <div class="owl-carousel owl-theme" style="max-width: 1100px; margin: 0 auto;">
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-apple-whole"></i></div>
+          <h3 class="cat-title">Organic Apples</h3>
+          <p style="font-size: 0.9rem; color: var(--color-accent); font-weight: bold;">₹4.99 / kg</p>
+          <a href="products.html" class="btn-custom" style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Add to Cart</a>
+        </div>
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-carrot"></i></div>
+          <h3 class="cat-title">Baby Carrots</h3>
+          <p style="font-size: 0.9rem; color: var(--color-accent); font-weight: bold;">₹2.49 / bag</p>
+          <a href="products.html" class="btn-custom" style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Add to Cart</a>
+        </div>
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-cheese"></i></div>
+          <h3 class="cat-title">Fresh Dairy Cheese</h3>
+          <p style="font-size: 0.9rem; color: var(--color-accent); font-weight: bold;">₹8.99 / pc</p>
+          <a href="products.html" class="btn-custom" style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Add to Cart</a>
+        </div>
+        <div class="cat-item">
+          <div class="cat-icon"><i class="fa-solid fa-lemon"></i></div>
+          <h3 class="cat-title">Organic Lemons</h3>
+          <p style="font-size: 0.9rem; color: var(--color-accent); font-weight: bold;">₹3.90 / kg</p>
+          <a href="products.html" class="btn-custom" style="margin-top: 1rem; padding: 0.4rem 1rem; font-size: 0.8rem;">Add to Cart</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Fun Interactive Farm Quiz (Accordion Widget) -->
+    <section class="quiz-sec">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Trivia time</span>
+        <h2 class="section-title">Do You Know Organic?</h2>
+      </div>
+      <div class="faq-accordion" style="max-width: 700px; margin: 0 auto;">
+        <h3>What makes food strictly "Organic"?</h3>
+        <div>
+          <p>Strict organic farming requires crops to grow without synthetic fertilizers, synthetic pesticides, sewage sludge, or GMOs. Our fields at Stackly are fully certified!</p>
+        </div>
+        <h3>Are raw juices healthier than whole fruits?</h3>
+        <div>
+          <p>Juicing delivers vitamins and minerals rapidly, though whole fruits contain precious fibers. Stackly offers both to suit all lifestyles.</p>
+        </div>
+        <h3>How frequently does Stackly source fresh nuts?</h3>
+        <div>
+          <p>We work directly with certified walnut and almond growers, receiving freshly harvested stocks twice every week!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Organic Statistics Counter -->
+    <section class="stats-sec" style="background-color: var(--color-primary-light);">
+      <div class="footer-container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <div>
+          <h2 class="count-num" data-count="98" style="font-size: 3.5rem; color: var(--color-primary);">0</h2>
+          <p style="font-weight: 600; color: var(--color-accent);">Customer Satisfaction</p>
+        </div>
+        <div>
+          <h2 class="count-num" data-count="45" style="font-size: 3.5rem; color: var(--color-primary);">0</h2>
+          <p style="font-weight: 600; color: var(--color-accent);">Partnered Organic Farms</p>
+        </div>
+        <div>
+          <h2 class="count-num" data-count="150" style="font-size: 3.5rem; color: var(--color-primary);">0</h2>
+          <p style="font-weight: 600; color: var(--color-accent);">Daily Free Deliveries</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Store Locator Finder -->
+    <section class="locator-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title">Looking for a Physical Store?</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Stackly has physical outlets stocked with organic products in prime locations.</p>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; text-align: left;">
+          <div class="timeline-box">
+            <h4 style="color: var(--color-accent); font-weight: bold; margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot"></i> Downtown Stackly</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">480 Organic Lane, New York, NY<br>Phone: +1 555 123 456</p>
+          </div>
+          <div class="timeline-box">
+            <h4 style="color: var(--color-accent); font-weight: bold; margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot"></i> Brooklyn Greenhouse</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">12 Fresh Meadow Ave, Brooklyn, NY<br>Phone: +1 555 987 654</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Community Farm Tour CTA -->
+    <section class="tour-cta-sec" style="background-color: var(--color-bg);">
+      <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;" data-aos="zoom-in">
+        <h2 class="section-title">Schedule a Farm Visit</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">We host weekly physical tours for schools and families at our partner fields in New Jersey. Booking is quick and simple.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <input type="text" class="form-control datepicker-input" placeholder="Select Tour Date" style="max-width: 250px;">
+          <a href="contact.html" class="btn-custom btn-primary-custom">Book Farm Tour</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Weekly Newsletter Subscription Form -->
+    <section class="newsletter-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+        <h2 class="section-title">Subscribe to Stackly Deals</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Get instant email discounts on fresh fruits, nuts, and organic baked breads.</p>
+        <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <div class="form-group" style="margin: 0;">
+            <input type="email" name="email" placeholder="Your Email Address" class="form-control" required style="border-radius: var(--radius-lg);">
+          </div>
+          <button type="submit" class="btn-custom" style="align-self: center; margin-top: 1rem;">Join VIP Club</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript Library CDNs -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/2.0.4/jarallax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1.1/jquery.appear.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

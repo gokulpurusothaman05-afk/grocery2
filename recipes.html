@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Discover healthy organic recipes. Learn how to cook with fresh berries, nuts, and bakeries. Balance your nutrition and schedule grocery visits.">
+  
+  <!-- CSS Library CDNs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Loading Page / Preloader (Section 1) -->
+  <div id="preloader">
+    <div class="preloader-logo">
+      <img src="assets/images/logo.webp" alt="Stackly logo">
+    </div>
+    <div class="spinner"></div>
+    <div class="preloader-text">Loading fresh organic goods...</div>
+  </div>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Section 2: Recipes Parallax Header (Jarallax parallax background) -->
+    <section class="jarallax-banner-sec jarallax">
+      <img src="assets/images/bakery_bread.png" alt="Recipes Banner" class="jarallax-img">
+      <div class="banner-content" data-aos="fade-down">
+        <h2>Organic Kitchen Recipes</h2>
+        <p style="font-weight: 500; letter-spacing: 1px;"><a href="index.html">Home</a> &nbsp;/&nbsp; Recipes</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Recipes Smart Search Bar -->
+    <section class="search-recipes-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+        <h3 class="section-title" style="font-size: 2rem;">Search Culinary Ideas</h3>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Browse organic breakfast rolls, raw fruit parfaits, or salad dressings.</p>
+        <form onsubmit="event.preventDefault(); alert('Recipe search active. Filtering catalog...');" style="display: flex; gap: 0.5rem; justify-content: center;">
+          <input type="text" placeholder="Search parfait, sourdough, celery juice..." class="form-control" required style="border-radius: var(--radius-lg);">
+          <button type="submit" class="btn-custom" style="padding: 0.8rem 1.5rem;"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section 4: Recipe Categories Selector -->
+    <section class="recipe-cats-sec">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Meal Planning</span>
+        <h2 class="section-title">Meal Categories</h2>
+      </div>
+      <div class="product-filter-nav" style="margin-bottom: 0;">
+        <button class="filter-btn active" onclick="filterRecipeGrid('*')">All Meals</button>
+        <button class="filter-btn" onclick="filterRecipeGrid('.meal-breakfast')">Breakfast</button>
+        <button class="filter-btn" onclick="filterRecipeGrid('.meal-juices')">Juices & Shakes</button>
+        <button class="filter-btn" onclick="filterRecipeGrid('.meal-bakery')">Organic Baking</button>
+      </div>
+    </section>
+
+    <!-- Section 5: Featured Recipe Card (Berry Special) -->
+    <section class="featured-recipe-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; align-items: center;">
+        <div data-aos="fade-right">
+          <span class="badge-custom">Chef's Special Recommendation</span>
+          <h2 style="font-family: var(--font-serif); font-size: 2.8rem; color: var(--color-primary); margin-bottom: 1.5rem;">Wild Berry Morning Bowl</h2>
+          <p style="color: var(--color-text-muted); margin-bottom: 1.5rem;">A nutritious yogurt parfait base filled with raw organic blueberries, strawberries, and walnut slivers, topped with pure local clover honey. Balanced for high vitamin C and energy boost.</p>
+          
+          <div style="display: flex; gap: 2rem; margin-bottom: 2rem;">
+            <div>
+              <span style="font-weight: bold; color: var(--color-accent); font-size: 1.2rem; display: block;">Prep Time</span>
+              <span style="font-size: 0.95rem; color: var(--color-text-muted);">10 Minutes</span>
+            </div>
+            <div>
+              <span style="font-weight: bold; color: var(--color-accent); font-size: 1.2rem; display: block;">Difficulty</span>
+              <span style="font-size: 0.95rem; color: var(--color-text-muted);">Very Easy</span>
+            </div>
+          </div>
+          <a href="#parfait-instructions" class="btn-custom video-popup-link">Read Step-by-Step Guide</a>
+        </div>
+        <div style="display: flex; justify-content: center;" data-aos="fade-left">
+          <img src="assets/images/hero_berry_bowl.png" alt="Berry Parfait Bowl" style="border-radius: var(--radius-md); box-shadow: var(--shadow-lg); border: 8px solid var(--color-bg); max-width: 90%;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: Recipes Grid (Supporting filtering) -->
+    <section class="recipe-grid-sec" id="recipe-catalog-grid">
+      <div class="container" style="max-width: 1200px; margin: 0 auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;" class="recipe-grid-container">
+          
+          <!-- Recipe Item 1 -->
+          <div class="timeline-box meal-breakfast" style="background-color: var(--color-bg-white);" data-aos="fade-up">
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary); margin-bottom: 0.5rem;">Berry Parfait Cup</h3>
+            <span style="color: var(--color-accent); font-weight: bold; font-size: 0.85rem;">Breakfast • 10m</span>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 1rem 0;">A simple, antioxidant-packed bowl of mixed berries, Greek yogurt, and raw walnuts.</p>
+            <a href="#recipe-details-parfait" class="btn-custom" style="padding: 0.4rem 1rem; font-size: 0.8rem;" onclick="alert('Steps: 1. Layer yogurt. 2. Wash and drop fresh berries. 3. Sprinkle walnuts. Enjoy!')">View cooking steps</a>
+          </div>
+
+          <!-- Recipe Item 2 -->
+          <div class="timeline-box meal-juices" style="background-color: var(--color-bg-white);" data-aos="fade-up" data-aos-delay="100">
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary); margin-bottom: 0.5rem;">Immune Shield Juice</h3>
+            <span style="color: var(--color-accent); font-weight: bold; font-size: 0.85rem;">Juices & Shakes • 5m</span>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 1rem 0;">A nutrient-dense blend of cold-pressed orange, celery, and ginger juices.</p>
+            <a href="#recipe-details-juice" class="btn-custom" style="padding: 0.4rem 1rem; font-size: 0.8rem;" onclick="alert('Steps: 1. Clean orange and celery stalks. 2. Push through juicer. 3. Serve chilled.')">View cooking steps</a>
+          </div>
+
+          <!-- Recipe Item 3 -->
+          <div class="timeline-box meal-bakery" style="background-color: var(--color-bg-white);" data-aos="fade-up" data-aos-delay="200">
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem; color: var(--color-primary); margin-bottom: 0.5rem;">Sourdough Garlic Toast</h3>
+            <span style="color: var(--color-accent); font-weight: bold; font-size: 0.85rem;">Organic Baking • 15m</span>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted); margin: 1rem 0;">Crusty sourdough bread toasts rubbed with fresh garlic and extra virgin olive oil.</p>
+            <a href="#recipe-details-toast" class="btn-custom" style="padding: 0.4rem 1rem; font-size: 0.8rem;" onclick="alert('Steps: 1. Slice sourdough loaf. 2. Toast slice. 3. Rub with garlic clove and pour olive oil.')">View cooking steps</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Pop-up Cooking Instructions (Magnific popup text simulation) -->
+    <section class="cooking-guides-sec" id="parfait-instructions" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title">Detailed Chef Handbooks</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Read or print our chemical-free kitchen handbooks in high resolution.</p>
+        <div class="gallery-popup-grid" style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="assets/images/bakery_bread.png" class="btn-custom btn-primary-custom" title="How to ferment sourdough starters at home">Sourdough Fermentation Guide</a>
+          <a href="assets/images/juice_bottles.png" class="btn-custom" title="Clean vegetable juicing and detox cycles">Cold pressed Juice Guide</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Ingredient Shopping Checklist -->
+    <section class="checklist-sec">
+      <div class="container" style="max-width: 700px; margin: 0 auto;" data-aos="fade-up">
+        <h2 class="section-title" style="text-align: center;">Interactive Ingredient Shopping</h2>
+        <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 3rem;">Check the items below that you need for your morning parfait, and add them directly to your checkout cart.</p>
+        
+        <div class="timeline-box" style="background-color: var(--color-bg-white); padding: 2rem;">
+          <form onsubmit="event.preventDefault(); alert('Checked ingredients have been added to your shopping cart.');">
+            <div style="display: flex; flex-direction: column; gap: 1rem;">
+              <label style="display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: 1.1rem;">
+                <input type="checkbox" name="ing" value="berries" checked style="width: 20px; height: 20px;">
+                <span>Fresh Berry Basket (₹9.99)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: 1.1rem;">
+                <input type="checkbox" name="ing" value="walnuts" style="width: 20px; height: 20px;">
+                <span>Assorted Walnuts pack (₹14.50)</span>
+              </label>
+              <label style="display: flex; align-items: center; gap: 1rem; cursor: pointer; font-size: 1.1rem;">
+                <input type="checkbox" name="ing" value="juice" style="width: 20px; height: 20px;">
+                <span>Cold Juice combo (₹12.99)</span>
+              </label>
+            </div>
+            <div style="text-align: center; margin-top: 2rem;">
+              <button type="submit" class="btn-custom btn-primary-custom">Add Checked Ingredients to Cart</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Calorie Count & Nutrition Calculator -->
+    <section class="calorie-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 700px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+        <h2 class="section-title">Organic Calorie Balance Calculator</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2.5rem;">Select your breakfast components to estimate total calories and vitamin C levels.</p>
+        
+        <div class="form-group" style="max-width: 400px; margin: 0 auto 2rem;">
+          <label>Choose Breakfast Plate</label>
+          <select id="calorie-select" class="form-control" onchange="updateCalorieCalculations()" style="background-color: var(--color-bg-white);">
+            <option value="parfait">Berry Yogurt Parfait Bowl</option>
+            <option value="toast">Sourdough Garlic Toast</option>
+            <option value="juice">Cold-Pressed Green Juice</option>
+          </select>
+        </div>
+
+        <div class="timeline-box" style="background-color: var(--color-bg); max-width: 450px; margin: 0 auto; border-color: var(--color-accent);">
+          <h4 style="color: var(--color-primary); font-family: var(--font-serif); margin-bottom: 0.8rem;">Nutritional Estimate</h4>
+          <p style="font-size: 1.25rem; color: var(--color-text-muted);">Estimated Energy: <span id="cal-energy-val" style="color: var(--color-accent); font-weight: bold;">280 Calories</span></p>
+          <p style="font-size: 1.1rem; color: var(--color-text-muted); margin-top: 0.5rem;">Vitamin C Content: <span id="cal-vit-val" style="color: var(--color-primary); font-weight: bold;">150% RDI</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Weekly E-Book Subscription Form -->
+    <section class="newsletter-sec" style="background-color: var(--color-bg);">
+      <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+        <h2 class="section-title">Get Free Organic Recipe Book</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Join our cooking newsletter. Receive weekly healthy ideas and a free PDF guide.</p>
+        <form class="newsletter-form" style="display: flex; flex-direction: column; gap: 0.8rem;">
+          <div class="form-group" style="margin: 0;">
+            <input type="email" name="email" placeholder="Your Email Address" class="form-control" required style="border-radius: var(--radius-lg);">
+          </div>
+          <button type="submit" class="btn-custom" style="align-self: center; margin-top: 1rem;">Download Recipe Book</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript Library CDNs -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/2.0.4/jarallax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1.1/jquery.appear.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // Isotope helper for Recipe Grid (Vanilla JS inline helper for speed)
+    function filterRecipeGrid(filterVal) {
+      if (typeof jQuery !== 'undefined' && typeof Isotope !== 'undefined') {
+        const grid = $('.recipe-grid-container').isotope({
+          itemSelector: '.timeline-box',
+          layoutMode: 'fitRows'
+        });
+        grid.isotope({ filter: filterVal });
+      }
+      
+      const buttons = document.querySelectorAll('.recipe-cats-sec button');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.target.classList.add('active');
+    }
+
+    // Dynamic Calorie Calculation
+    function updateCalorieCalculations() {
+      const select = document.getElementById('calorie-select');
+      const energy = document.getElementById('cal-energy-val');
+      const vit = document.getElementById('cal-vit-val');
+
+      const val = select.value;
+      if (val === 'parfait') {
+        energy.innerText = '280 Calories';
+        vit.innerText = '150% RDI';
+      } else if (val === 'toast') {
+        energy.innerText = '320 Calories';
+        vit.innerText = '15% RDI';
+      } else {
+        energy.innerText = '95 Calories';
+        vit.innerText = '220% RDI';
+      }
+    }
+
+    // Initialize layout after DOM renders
+    window.addEventListener('load', () => {
+      if (typeof jQuery !== 'undefined' && typeof Isotope !== 'undefined') {
+        $('.recipe-grid-container').isotope({
+          itemSelector: '.timeline-box',
+          layoutMode: 'fitRows'
+        });
+      }
+    });
+  </script>
+</body>
+</html>

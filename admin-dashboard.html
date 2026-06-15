@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Manage inventory, track customer orders, view revenue analytics, and access credentials log files on the Stackly admin dashboard.">
+  
+  <!-- CSS Library CDNs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body style="background-color: var(--color-bg);">
+
+  <div class="dashboard-layout">
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar" style="background-color: hsl(150, 45%, 15%);">
+      <div class="sidebar-logo">
+        <img src="assets/images/logo.webp" alt="Stackly logo"> <span style="font-size: 0.8rem; background-color: var(--color-accent); color: white; padding: 0.2rem 0.5rem; border-radius: var(--radius-sm); margin-left: 0.5rem; text-transform: uppercase; font-family: var(--font-sans);">Admin</span>
+      </div>
+      
+      <ul class="sidebar-menu">
+        <li>
+          <button class="sidebar-btn active" data-target="admin-overview">
+            <i class="fa-solid fa-chart-line"></i> Sales Overview
+          </button>
+        </li>
+        <li>
+          <button class="sidebar-btn" data-target="admin-inventory">
+            <i class="fa-solid fa-boxes-stacked"></i> Inventory CRUD
+          </button>
+        </li>
+        <li>
+          <button class="sidebar-btn" data-target="admin-orders">
+            <i class="fa-solid fa-clipboard-list"></i> Order Tracking
+          </button>
+        </li>
+        <li>
+          <button class="sidebar-btn" data-target="admin-customers">
+            <i class="fa-solid fa-users"></i> Client Database
+          </button>
+        </li>
+        <li>
+          <button class="sidebar-btn" data-target="admin-security">
+            <i class="fa-solid fa-shield-halved"></i> Access Logins
+          </button>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="index.html" class="sidebar-btn" style="background-color: rgba(255,255,255,0.05); color: #ffc87c;">
+          <i class="fa-solid fa-house"></i> Back to Store
+        </a>
+        <a href="login.html" class="sidebar-btn" style="margin-top: 5px; color: #ff6b6b;">
+          <i class="fa-solid fa-power-off"></i> Exit Controller
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area (Right Side) -->
+    <main class="dashboard-content-pane">
+      <!-- Dashboard Top Header Bar -->
+      <div class="dashboard-header">
+        <div>
+          <h1 class="dashboard-title">System Controller Pane</h1>
+          <p style="color: var(--color-text-muted); font-size: 0.95rem;">Monitor farm inventories, revenue graphs, and toggle buyer invoices.</p>
+        </div>
+        <div class="user-badge-wrap" style="border-color: var(--color-accent);">
+          <span style="font-weight: 600; color: var(--color-accent);">Admin Controller</span>
+          <div class="user-avatar" style="background-color: var(--color-primary);">AD</div>
+        </div>
+      </div>
+
+      <!-- Sales Overview Content Panel (Charts) -->
+      <section id="admin-overview" class="dashboard-section active" style="padding: 0;">
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-info">
+              <h3>Gross Revenue</h3>
+              <div class="metric-val">₹18.9k</div>
+            </div>
+            <div class="metric-icon"><i class="fa-solid fa-wallet"></i></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-info">
+              <h3>Shipped Baskets</h3>
+              <div class="metric-val">120</div>
+            </div>
+            <div class="metric-icon"><i class="fa-solid fa-dolly"></i></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-info">
+              <h3>Low Stock Warning</h3>
+              <div class="metric-val" style="color: #e63946;">3</div>
+            </div>
+            <div class="metric-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+          </div>
+          <div class="metric-card">
+            <div class="metric-info">
+              <h3>Registered Clients</h3>
+              <div class="metric-val">48</div>
+            </div>
+            <div class="metric-icon"><i class="fa-solid fa-users"></i></div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
+          <div class="chart-card" style="margin-bottom: 0;">
+            <h2 class="chart-title">Revenue Trends Line Chart</h2>
+            <div class="chart-canvas-wrap">
+              <canvas id="adminRevenueChart" style="display: block; width: 100%; height: 100%;"></canvas>
+            </div>
+          </div>
+          <div class="chart-card" style="margin-bottom: 0;">
+            <h2 class="chart-title">Product Category Breakdown</h2>
+            <div class="chart-canvas-wrap">
+              <canvas id="adminCategoryChart" style="display: block; width: 100%; height: 100%;"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Inventory CRUD Editor -->
+      <section id="admin-inventory" class="dashboard-section" style="padding: 0;">
+        <!-- Add Product Form Widget -->
+        <div class="chart-card" style="margin-bottom: 2rem;">
+          <h2 class="chart-title">Add New Organic Product</h2>
+          <form id="admin-add-product-form" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; align-items: end;">
+            <div class="form-group" style="margin: 0;">
+              <label>Product Name</label>
+              <input type="text" id="inv-prod-name" class="form-control" placeholder="e.g. Organic Blueberries" required>
+            </div>
+            <div class="form-group" style="margin: 0;">
+              <label>Category</label>
+              <select id="inv-prod-category" class="form-control" style="background-color: var(--color-bg-white);">
+                <option value="Fruits">Fruits</option>
+                <option value="Vegetables">Vegetables</option>
+                <option value="Nuts">Organic Nuts</option>
+                <option value="Bakery">Bakery</option>
+              </select>
+            </div>
+            <div class="form-group" style="margin: 0;">
+              <label>Price (₹)</label>
+              <input type="number" id="inv-prod-price" class="form-control" placeholder="9.99" step="0.01" required>
+            </div>
+            <div class="form-group" style="margin: 0;">
+              <label>Initial Stock</label>
+              <input type="number" id="inv-prod-stock" class="form-control" placeholder="50" required>
+            </div>
+            <div>
+              <button type="submit" class="btn-custom" style="width: 100%; padding: 0.8rem 1rem;">Add to Shelf</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Inventory List Table -->
+        <div class="chart-card">
+          <h2 class="chart-title">Current Boutique Shelf Items</h2>
+          <div class="table-responsive">
+            <table class="dashboard-table" id="admin-inventory-list">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Stock Levels</th>
+                  <th>Controls</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr id="p-1">
+                  <td><strong>Mixed Berry Basket</strong></td>
+                  <td>Fruits</td>
+                  <td>₹9.99</td>
+                  <td>45 Units</td>
+                  <td>
+                    <button class="btn-custom" onclick="deleteProduct('p-1')" style="background-color: #e63946; padding: 0.3rem 0.8rem; font-size: 0.8rem; box-shadow: none;">Delete</button>
+                  </td>
+                </tr>
+                <tr id="p-2">
+                  <td><strong>Assorted Walnuts</strong></td>
+                  <td>Organic Nuts</td>
+                  <td>₹14.50</td>
+                  <td>8 Units <i class="fa-solid fa-triangle-exclamation" style="color:#e63946;"></i></td>
+                  <td>
+                    <button class="btn-custom" onclick="deleteProduct('p-2')" style="background-color: #e63946; padding: 0.3rem 0.8rem; font-size: 0.8rem; box-shadow: none;">Delete</button>
+                  </td>
+                </tr>
+                <tr id="p-3">
+                  <td><strong>Cold Juice Combo</strong></td>
+                  <td>Fruits</td>
+                  <td>₹12.99</td>
+                  <td>25 Units</td>
+                  <td>
+                    <button class="btn-custom" onclick="deleteProduct('p-3')" style="background-color: #e63946; padding: 0.3rem 0.8rem; font-size: 0.8rem; box-shadow: none;">Delete</button>
+                  </td>
+                </tr>
+                <tr id="p-4">
+                  <td><strong>Sourdough Loaf</strong></td>
+                  <td>Bakery</td>
+                  <td>₹5.25</td>
+                  <td>30 Units</td>
+                  <td>
+                    <button class="btn-custom" onclick="deleteProduct('p-4')" style="background-color: #e63946; padding: 0.3rem 0.8rem; font-size: 0.8rem; box-shadow: none;">Delete</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Order Tracking Panel -->
+      <section id="admin-orders" class="dashboard-section" style="padding: 0;">
+        <div class="chart-card">
+          <h2 class="chart-title">Buyer Invoices & Shipping Status</h2>
+          <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Review incoming basket orders. Click the controls column button to switch status.</p>
+          <div class="table-responsive">
+            <table class="dashboard-table" id="admin-orders-table">
+              <thead>
+                <tr>
+                  <th>Client</th>
+                  <th>Order Contents</th>
+                  <th>Total</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Status Switcher</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Alex Miller</strong><br><small>alex.miller@gmail.com</small></td>
+                  <td>Mixed Berries x1, Juice Combo x1</td>
+                  <td>₹22.98</td>
+                  <td>2026-06-08</td>
+                  <td><span class="status-pill status-pending">Pending</span></td>
+                  <td>
+                    <button class="btn-custom status-toggle-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; box-shadow: none;">Complete Order</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>Susan Vance</strong><br><small>susan.v@yahoo.com</small></td>
+                  <td>Walnuts Assorted x1</td>
+                  <td>₹14.50</td>
+                  <td>2026-06-07</td>
+                  <td><span class="status-pill status-completed">Completed</span></td>
+                  <td>
+                    <button class="btn-custom status-toggle-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; box-shadow: none;">Ship Order</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td><strong>David Hayes</strong><br><small>dave.h@outlook.com</small></td>
+                  <td>Sourdough Loaf x2</td>
+                  <td>₹10.50</td>
+                  <td>2026-06-05</td>
+                  <td><span class="status-pill status-cancelled">Cancelled</span></td>
+                  <td>
+                    <button class="btn-custom status-toggle-btn" style="padding: 0.3rem 0.8rem; font-size: 0.8rem; box-shadow: none;">Reopen</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Customer Registry Database -->
+      <section id="admin-customers" class="dashboard-section" style="padding: 0;">
+        <div class="chart-card">
+          <h2 class="chart-title">Customer Registration Database</h2>
+          <div class="table-responsive">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Client Name</th>
+                  <th>Email Address</th>
+                  <th>Registered Date</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Alex Miller</strong></td>
+                  <td>alex.miller@gmail.com</td>
+                  <td>2026-05-15</td>
+                  <td><span class="status-pill status-completed">Active VIP</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Susan Vance</strong></td>
+                  <td>susan.v@yahoo.com</td>
+                  <td>2026-05-20</td>
+                  <td><span class="status-pill status-completed">Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>David Hayes</strong></td>
+                  <td>dave.h@outlook.com</td>
+                  <td>2026-06-01</td>
+                  <td><span class="status-pill status-completed">Active</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Marc Carter</strong></td>
+                  <td>marc.carter@gmail.com</td>
+                  <td>2026-06-11</td>
+                  <td><span class="status-pill status-pending">New Registered</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- Security / Access Logins -->
+      <section id="admin-security" class="dashboard-section" style="padding: 0;">
+        <div class="chart-card">
+          <h2 class="chart-title">Hashed Credentials Login Logs</h2>
+          <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Real-time logging of authentication requests and security details.</p>
+          <div class="timeline-box" style="background-color: #1e1e1e; color: #a9b7c6; font-family: monospace; font-size: 0.9rem; padding: 1.5rem; border-color: var(--color-primary);">
+            <div style="color: #6a8759;">[2026-06-11 23:14:12] SUCCESS: admin@stackly.com - Authorized session created from ip 192.168.1.48</div>
+            <div style="color: #e8bf6a;">[2026-06-11 23:08:44] WARN: Client login failed - email client@stackly.com - Invalid hashed password</div>
+            <div style="color: #6a8759;">[2026-06-11 22:45:01] SUCCESS: client@stackly.com - Authorized session created from ip 192.168.1.102</div>
+            <div style="color: #9876aa;">[2026-06-11 22:30:00] INFO: SSL Handshake completed for domain grocery - TLSv1.3</div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- JavaScript Library CDNs -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

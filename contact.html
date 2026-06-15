@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly</title>
+  <meta name="description" content="Reach the Stackly organic grocery team. Send messages, calculate wholesale bulk pricing, or schedule a farm tour using our calendar.">
+  
+  <!-- CSS Library CDNs -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Loading Page / Preloader (Section 1) -->
+  <div id="preloader">
+    <div class="preloader-logo">
+      <img src="assets/images/logo.webp" alt="Stackly logo">
+    </div>
+    <div class="spinner"></div>
+    <div class="preloader-text">Loading fresh organic goods...</div>
+  </div>
+
+  <!-- Header Placeholder -->
+  <div id="header-placeholder"></div>
+
+  <main>
+    <!-- Section 2: Contact Parallax Header (Jarallax parallax background) -->
+    <section class="jarallax-banner-sec jarallax">
+      <img src="assets/images/about_grocery_store.png" alt="Contact Banner" class="jarallax-img">
+      <div class="banner-content" data-aos="fade-down">
+        <h2>Get in Touch</h2>
+        <p style="font-weight: 500; letter-spacing: 1px;"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact Us</p>
+      </div>
+    </section>
+
+    <!-- Section 3: Help Center FAQ (jQuery UI Accordion) -->
+    <section class="help-sec" style="background-color: var(--color-bg-white);">
+      <div class="section-title-wrap">
+        <span class="section-subtitle">Support Desk</span>
+        <h2 class="section-title">Common Questions</h2>
+      </div>
+      <div class="faq-accordion" style="max-width: 700px; margin: 0 auto;">
+        <h3>How fast are baskets delivered?</h3>
+        <div>
+          <p>We deliver within 24 hours of farm harvesting! Subscriptions are scheduled precisely to your preferred date and time.</p>
+        </div>
+        <h3>Do you ship fresh juices outside NY/NJ?</h3>
+        <div>
+          <p>To guarantee peak freshness and enzyme activity, cold pressed raw juices are restricted to our local NY & NJ logistics network.</p>
+        </div>
+        <h3>What if my berry basket has damaged items?</h3>
+        <div>
+          <p>We maintain a 100% Satisfaction Guarantee. Contact our billing department, and we will issue an immediate replacement or refund.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Store Contacts Grid -->
+    <section class="contacts-grid-sec">
+      <div class="footer-container" style="max-width: 1000px; margin: 0 auto; text-align: center;">
+        <div class="timeline-box" data-aos="fade-right">
+          <i class="fa-solid fa-phone" style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+          <h3 class="cat-title">Calling Center</h3>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">Hotline: +1 555 123 456<br>Support: +1 555 987 654</p>
+        </div>
+        <div class="timeline-box" data-aos="fade-up">
+          <i class="fa-solid fa-envelope" style="font-size: 2.5rem; color: var(--color-primary); margin-bottom: 1rem;"></i>
+          <h3 class="cat-title">Email Desk</h3>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">General: support@stackly.com<br>Wholesale: sales@stackly.com</p>
+        </div>
+        <div class="timeline-box" data-aos="fade-left">
+          <i class="fa-solid fa-map-location-dot" style="font-size: 2.5rem; color: var(--color-accent); margin-bottom: 1rem;"></i>
+          <h3 class="cat-title">Main Store</h3>
+          <p style="font-size: 0.95rem; color: var(--color-text-muted);">480 Organic Lane,<br>New York, NY 10013</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Dynamic Contact Form (jQuery Validation) -->
+    <section class="contact-form-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 700px; margin: 0 auto;" data-aos="fade-up">
+        <h2 class="section-title" style="text-align: center;">Write to Our Sourcing Office</h2>
+        <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 3rem;">Have organic queries? Fill the form, and our growers will reply within 12 hours.</p>
+        
+        <form class="contact-form">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" class="form-control" placeholder="Enter Full Name" required>
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" name="email" class="form-control" placeholder="Enter Email Address" required>
+          </div>
+          <div class="form-group">
+            <label>Subject</label>
+            <input type="text" name="subject" class="form-control" placeholder="Subject Topic" required>
+          </div>
+          <div class="form-group">
+            <label>Message Content</label>
+            <textarea name="message" rows="5" class="form-control" placeholder="Write message..." required></textarea>
+          </div>
+          <div style="text-align: center; margin-top: 2rem;">
+            <button type="submit" class="btn-custom">Send Secure Message</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section 6: Wholesale Bulk Calculator (Interactive JS slider) -->
+    <section class="wholesale-sec">
+      <div class="container" style="max-width: 700px; margin: 0 auto; text-align: center;" data-aos="fade-up">
+        <h2 class="section-title">Wholesale Inquiry Calculator</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2.5rem;">Planning an event or sourcing for a juice bar? Enter your target weight to estimate volume discounts.</p>
+        
+        <div class="form-group" style="max-width: 400px; margin: 0 auto 2rem;">
+          <label style="text-align: center; font-weight: bold;">Target Quantity (in kilograms)</label>
+          <input type="number" id="wholesale-qty" class="form-control" value="50" min="10" max="1000" oninput="calculateWholesaleDiscount()" style="text-align: center; border-radius: var(--radius-lg);">
+        </div>
+
+        <div class="timeline-box" style="background-color: var(--color-bg-white); max-width: 450px; margin: 0 auto;">
+          <h4 style="color: var(--color-primary); font-family: var(--font-serif); margin-bottom: 0.8rem;">Calculated Bulk Estimation</h4>
+          <p style="font-size: 1.1rem; color: var(--color-text-muted);">Standard Price: <del id="bulk-std-price">₹250.00</del></p>
+          <p style="font-size: 1.5rem; color: var(--color-accent); font-weight: bold; margin-top: 0.5rem;">Discounted Quote: <span id="bulk-disc-price">₹200.00</span></p>
+          <span class="badge-custom" id="bulk-disc-pct" style="margin-top: 0.5rem;">20% Volume Discount Active</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Star Rating Feedback System -->
+    <section class="feedback-sec" style="background-color: var(--color-bg-white);">
+      <div class="container" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title lettering-title">Rate Our Store Service</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2rem;">Your reviews keep our family farm cooperation growing stronger.</p>
+        <div style="font-size: 2.5rem; color: #ffc107; display: flex; gap: 0.8rem; justify-content: center; margin-bottom: 1.5rem; cursor: pointer;">
+          <i class="fa-regular fa-star" onclick="toggleStars(1)"></i>
+          <i class="fa-regular fa-star" onclick="toggleStars(2)"></i>
+          <i class="fa-regular fa-star" onclick="toggleStars(3)"></i>
+          <i class="fa-regular fa-star" onclick="toggleStars(4)"></i>
+          <i class="fa-regular fa-star" onclick="toggleStars(5)"></i>
+        </div>
+        <button class="btn-custom" onclick="alert('Thank you for your rating! We appreciate your support.')">Submit Star Review</button>
+      </div>
+    </section>
+
+    <!-- Section 8: Farm Tour Booking Form (Datepicker integration) -->
+    <section class="booking-sec">
+      <div class="container" style="max-width: 650px; margin: 0 auto;" data-aos="fade-up">
+        <h2 class="section-title" style="text-align: center;">Book a Physical Farm Tour</h2>
+        <p style="text-align: center; color: var(--color-text-muted); margin-bottom: 3rem;">Walk through our fresh berry rows, taste juices on-site, and pick walnuts directly.</p>
+        <form class="contact-form" onsubmit="event.preventDefault(); alert('Success! Your farm tour request has been received.'); this.reset();">
+          <div class="form-group">
+            <label>Select Tour Date</label>
+            <input type="text" class="form-control datepicker-input" placeholder="Choose Date from Calendar" required readonly style="background-color: var(--color-bg-white);">
+          </div>
+          <div class="form-group">
+            <label>Number of Visitors</label>
+            <select class="form-control" style="background-color: var(--color-bg-white);">
+              <option>1 Visitor</option>
+              <option>2 - 4 Visitors</option>
+              <option>5 - 10 Visitors</option>
+              <option>10+ (School/Wholesale Group)</option>
+            </select>
+          </div>
+          <div style="text-align: center; margin-top: 2rem;">
+            <button type="submit" class="btn-custom btn-primary-custom">Confirm Booking Date</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Section 9: Next Tour Countdown Timer -->
+    <section class="tour-countdown-sec" style="background-color: var(--color-primary-light);">
+      <div class="container" style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <span class="badge-custom">Upcoming Event</span>
+        <h2 style="font-family: var(--font-serif); font-size: 2.2rem; color: var(--color-primary-dark); margin-bottom: 2rem;">Next Public Farm Tour Countdown</h2>
+        <div class="countdown-wrap" id="deal-countdown">
+          <div class="countdown-item">
+            <span class="countdown-num" id="days-val">00</span>
+            <span class="countdown-label">Days</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-num" id="hours-val">00</span>
+            <span class="countdown-label">Hours</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-num" id="mins-val">00</span>
+            <span class="countdown-label">Mins</span>
+          </div>
+          <div class="countdown-item">
+            <span class="countdown-num" id="secs-val">00</span>
+            <span class="countdown-label">Secs</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 10: Live Map Mockup Layout (Styled via CSS layout) -->
+    <section class="map-sec" style="background-color: var(--color-bg-white); padding-bottom: 4rem;">
+      <div class="container" style="max-width: 900px; margin: 0 auto; text-align: center;">
+        <h2 class="section-title">Interactive Store Coordinates</h2>
+        <p style="color: var(--color-text-muted); margin-bottom: 2.5rem;">Downtown NY outlet driving map. Get routes instantly.</p>
+        
+        <!-- Live Map Container Mockup -->
+        <div class="timeline-box" style="height: 350px; background-color: var(--color-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; border-color: var(--color-accent); position: relative; overflow: hidden; padding: 0;">
+          <!-- Map Background graphic using fontawesome icons -->
+          <i class="fa-regular fa-map" style="font-size: 8rem; color: var(--color-border); opacity: 0.5; position: absolute;"></i>
+          
+          <div style="z-index: 2; padding: 2rem;">
+            <div style="width: 50px; height: 50px; background-color: var(--color-accent); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white; margin: 0 auto 1.5rem; animation: bounce 2s infinite;">
+              <i class="fa-solid fa-location-pin"></i>
+            </div>
+            <h4 style="color: var(--color-primary); font-weight: bold; margin-bottom: 0.5rem;">Stackly Sourcing HQ</h4>
+            <p style="font-size: 0.9rem; color: var(--color-text-muted);">480 Organic Lane, New York, NY 10013</p>
+            <a href="404.html" class="btn-custom btn-primary-custom" style="padding: 0.4rem 1.2rem; font-size: 0.85rem; margin-top: 1rem;"><i class="fa-solid fa-diamond-turn-right"></i> Open Navigation</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Placeholder -->
+  <div id="footer-placeholder"></div>
+
+  <!-- JavaScript Library CDNs -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/2.0.4/jarallax.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js"></script>
+  <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/circletype@2.3.0/dist/circletype.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lettering.js/0.7.0/jquery.lettering.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-appear/0.1.1/jquery.appear.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    // 1. Bulk Calculator Engine
+    function calculateWholesaleDiscount() {
+      const qtyInput = document.getElementById('wholesale-qty');
+      const stdPriceEl = document.getElementById('bulk-std-price');
+      const discPriceEl = document.getElementById('bulk-disc-price');
+      const discPctEl = document.getElementById('bulk-disc-pct');
+      
+      let qty = parseInt(qtyInput.value, 10);
+      if (isNaN(qty) || qty < 10) qty = 10;
+      
+
+      const pricePerKg = 5.00;
+      const stdTotal = qty * pricePerKg;
+      
+      let discountPct = 0;
+      if (qty >= 100) discountPct = 25;
+      else if (qty >= 50) discountPct = 20;
+      else if (qty >= 20) discountPct = 10;
+      
+      const discTotal = stdTotal * (1 - (discountPct / 100));
+      
+      stdPriceEl.innerText = '₹' + stdTotal.toFixed(2);
+      discPriceEl.innerText = '₹' + discTotal.toFixed(2);
+      discPctEl.innerText = discountPct + '% Volume Discount Active';
+    }
+
+    // 2. Stars rating UI handler
+    function toggleStars(rating) {
+      const stars = document.querySelectorAll('.feedback-sec i');
+      stars.forEach((star, index) => {
+        if (index < rating) {
+          star.className = 'fa-solid fa-star';
+        } else {
+          star.className = 'fa-regular fa-star';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
