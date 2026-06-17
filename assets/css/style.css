@@ -265,6 +265,20 @@ img {
   font-weight: bold;
 }
 
+/* Mobile: hide Portal button to avoid header crowding */
+@media (max-width: 600px) {
+  .nav-actions .btn-primary-custom {
+    display: none !important;
+  }
+}
+
+/* Tablet and below: also hide the Portal button to prevent overlap */
+@media (max-width: 900px) {
+  .nav-actions .btn-primary-custom {
+    display: none !important;
+  }
+}
+
 /* Footer styling */
 .site-footer {
   background-color: var(--color-primary-dark);
