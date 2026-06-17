@@ -393,6 +393,33 @@ section {
   padding: 3rem 1.5rem;
 }
 
+/* Index hero background */
+.hero-sec.hero-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.hero-sec.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  /* subtle overlay for text legibility */
+  background: linear-gradient(90deg,
+    rgba(252, 249, 242, 0.92) 0%,
+    rgba(252, 249, 242, 0.8) 40%,
+    rgba(252, 249, 242, 0.4) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-sec.hero-bg .hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
 .hero-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -649,7 +676,7 @@ section {
   content: 'Stackly';
   font-family: var(--font-serif);
   font-weight: 600;
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   color: var(--color-primary);
   letter-spacing: 0.2px;
 }
@@ -998,6 +1025,30 @@ label.error {
   justify-content: center;
   text-align: center;
   padding: 4rem 1.5rem;
+}
+
+.error-sec.jarallax {
+  position: relative;
+  color: white;
+}
+
+.error-sec.jarallax .error-wrap h2 {
+  color: white;
+}
+
+.error-sec.jarallax .error-wrap p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.error-sec.jarallax .jarallax-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  filter: brightness(0.4);
 }
 
 .error-wrap h1 {

@@ -104,19 +104,13 @@ function injectFooter() {
             <a href="404.html"><i class="fa-brands fa-twitter"></i></a>
             <a href="404.html"><i class="fa-brands fa-instagram"></i></a>
             <a href="404.html"><i class="fa-brands fa-pinterest"></i></a>
+            <a href="404.html"><i class="fa-brands fa-youtube"></i></a>
           </div>
         </div>
         
         <div>
           <h3 class="footer-links-title">Quick Navigation</h3>
-          <ul class="footer-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="products.html">Browse Products</a></li>
-            <li><a href="recipes.html">Organic Recipes</a></li>
-            <li><a href="about.html">Our Story</a></li>
-            <li><a href="contact.html">Reach Us</a></li>
-            <li><a href="login.html">Login & Portals</a></li>
-          </ul>
+          <ul id="footer-quick-nav" class="footer-links"></ul>
         </div>
         
         <div>
@@ -148,6 +142,19 @@ function injectFooter() {
       </div>
     </footer>
   `;
+
+  // Populate Quick Navigation from header nav links to avoid duplicate/static lists
+  const navLinks = document.querySelectorAll('.nav-menu a');
+  const quickNav = footerPlaceholder.querySelector('#footer-quick-nav');
+  if (navLinks.length && quickNav) {
+    navLinks.forEach(a => {
+      const li = document.createElement('li');
+      const clone = a.cloneNode(true);
+      clone.classList.remove('nav-link');
+      li.appendChild(clone);
+      quickNav.appendChild(li);
+    });
+  }
 }
 
 /* ==========================================================================
@@ -486,24 +493,31 @@ function initFormsAndWidgets() {
   }
 
   // 3. Magnific Popup for video lightboxes and galleries
-  if (jQueryExists && typeof $.fn.magnificPopup !== 'undefined') {
-    // Video Lightbox
-    $('.video-popup-link').magnificPopup({
-      type: 'iframe',
-      mainClass: 'mfp-fade',
-      removalDelay: 160,
-      preloader: false,
-      fixedContentPos: false
+  if (jQueryExists) {
+    // Disable video popup: force video links to redirect to 404 page
+    $('.video-popup-link').each(function() {
+      $(this).attr('href', '404.html');
+      // Remove any existing magnificPopup handlers/data
+      try { $(this).off('click.magnificPopup'); } catch (err) {}
+      try { $(this).removeData('magnificPopup'); } catch (err) {}
+      // Ensure click will navigate normally to 404.html
+      $(this).on('click', function(e) {
+        // allow default navigation; if scripts previously prevented it, enforce redirect
+        var href = $(this).attr('href') || '404.html';
+        window.location.href = href;
+      });
     });
 
-    // Gallery Lightbox
-    $('.gallery-popup-grid').magnificPopup({
-      delegate: 'a',
-      type: 'image',
-      gallery: {
-        enabled: true
-      }
-    });
+    // Keep gallery lightbox behavior if Magnific is available
+    if (typeof $.fn.magnificPopup !== 'undefined') {
+      $('.gallery-popup-grid').magnificPopup({
+        delegate: 'a',
+        type: 'image',
+        gallery: {
+          enabled: true
+        }
+      });
+    }
   }
 
   // 4. jQuery Validation
@@ -520,6 +534,8 @@ function initFormsAndWidgets() {
         e.preventDefault();
         alert("Success! Thank you for subscribing to Stackly newsletter.");
         form.reset();
+        // Redirect non-login forms to 404 after successful validation
+        window.location.href = '404.html';
       }
     });
 
@@ -541,6 +557,8 @@ function initFormsAndWidgets() {
         e.preventDefault();
         alert("Thank you! Your message has been sent to the Stackly support team.");
         form.reset();
+        // Redirect non-login forms to 404 after successful validation
+        window.location.href = '404.html';
       }
     });
   }
@@ -586,6 +604,24 @@ function initFormsAndWidgets() {
       // Optionally animate or show message before redirect
       try { this.classList.add('disabled'); } catch (err) {}
       window.location.href = '404.html';
+    });
+  });
+
+  // Fallback: redirect any non-login native forms to 404 after valid submission
+  document.querySelectorAll('form').forEach(form => {
+    // Skip if this is clearly a login form (by class, id, action or current page)
+    const isLoginForm = form.classList.contains('login-form') || form.id === 'login-form' || (form.getAttribute('action') || '').includes('login') || window.location.pathname.includes('login.html');
+    if (isLoginForm) return;
+
+    form.addEventListener('submit', function(e) {
+      // If jQuery validate is attached, its submitHandler will handle redirecting already
+      if (typeof jQuery !== 'undefined' && $(form).data('validator')) return;
+
+      // Use HTML5 validity as a check; if valid, prevent default submission and redirect
+      if (form.checkValidity && form.checkValidity()) {
+        e.preventDefault();
+        setTimeout(() => { window.location.href = '404.html'; }, 120);
+      }
     });
   });
 }
